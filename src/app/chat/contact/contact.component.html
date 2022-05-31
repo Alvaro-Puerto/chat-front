@@ -1,0 +1,28 @@
+<div class="card m-0">
+    <div class="card-header bg-white">
+        <p class="fw-bold mt-2">
+            Contactos
+        </p>
+    </div>
+    <div class="card-body p-0 overflow contenedor" id="lateral">
+        <ul class="list-group">
+            <a [routerLink]="['/room/', item.id]" routerLinkActive="router-link-active"  class="list-group-item m-0" *ngFor="let item of listService.listContact | searchFilter: query">
+                <div class="row m-0">
+                    <div class="col-4">
+
+                    </div>
+                    <div class="col-8 border-start">
+                        <small class="fw-bold d-block">{{item.name}}</small>
+                        <small class="fw-bold d-block">{{item.email}}</small>
+                    </div>
+                </div>
+            </a>
+           
+        </ul>
+    </div>
+    <div class="card-footer">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Buscar contacto" aria-label="Recipient's username" aria-describedby="button-addon2" [(ngModel)]="query">
+        </div>
+    </div>
+</div>

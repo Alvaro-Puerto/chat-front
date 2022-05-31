@@ -1,0 +1,60 @@
+
+<div class="container-fluid bg-light p-4" style="height: 100%;">
+    <div class="row align-items-center m-4 h-100">
+        <div class="col-lg-4 col-sm-8 col-md-6 mx-auto m-4">
+            <div class="card shadow">
+                <div class="card-header bg-white">
+                    <p class="fw-bold text-center m-4">Registrate</p>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="registerForm" (ngSubmit)="sendForm()">
+                        <div class="form-group mt-2 mb-1">
+                            <label class="fw-bold" for="">Nombre de usuario <span class="text-danger">*</span></label>
+                            <input type="text" name="" class="form-control rounded-0" id="" formControlName="name">
+                            <span class="text-danger" *ngIf="(getRegisterControl['name'].touched ||submitted) && (getRegisterControl['name'].errors?.['required'])">
+                                El campo es requerido
+                            </span>
+                            <span class="text-danger" *ngIf="(getRegisterControl['name'].touched ||submitted) && (getRegisterControl['name'].errors?.['min'])">
+                                El nombre de usuario debe ser mayor a 8 caracteres
+                            </span>
+                        </div>
+                        <div class="form-group mt-1 mb-1">
+                            <label class="fw-bold" for="">Correo electronico <span class="text-danger">*</span></label>
+                            <input type="text" name="" class="form-control rounded-0" id="" formControlName="email">
+                            <span class="text-danger" *ngIf="(getRegisterControl['email'].touched ||submitted) && (getRegisterControl['email'].errors?.['required'])">
+                                El campo es requerido
+                            </span>
+                            <span class="text-danger" *ngIf="(getRegisterControl['email'].touched ||submitted) && (getRegisterControl['email'].errors?.['email'])">
+                                Por favor ingrese un formato de correo valido
+                            </span>
+                        </div>
+                        <div class="form-group  mt-1 mb-1">
+                            <label class="fw-bold" for="">Contraseña <span class="text-danger">*</span></label>
+                            <input type="password" name="" class="form-control rounded-0" id="" formControlName="password">
+                            <span class="text-danger" *ngIf="(getRegisterControl['password'].touched ||submitted) && (getRegisterControl['password'].errors?.['invalidPassword'])">
+                                La contrasena debe ser minimo 8 caracteres, 1 Mayuscula, 1 minuscula
+                            </span>
+                        </div>
+                        <div class="form-group  mt-1 mb-2">
+                            <label class="fw-bold" for="">Repetir contraseña <span class="text-danger">*</span></label>
+                            <input type="password" name="" class="form-control rounded-0" id="" formControlName="password_confirmation">
+                            <span class="text-danger" *ngIf="(getRegisterControl['password_confirmation'].touched ||submitted) && (getRegisterControl['password_confirmation'].errors?.['required'])">
+                                El campo es requerido
+                            </span>
+                            <span class="text-danger" *ngIf="(getRegisterControl['password_confirmation'].touched ||submitted) && (getRegisterControl['password_confirmation'].errors?.['passwordMismatch'])">
+                                Las contrasenas no coinciden
+                            </span>
+                        </div>
+                        <div class="form-group d-flex justify-content-center p-4">
+                            <button class="btn btn-success btn-block m-1" type="submit">Registrate</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="./login">Inicia sesion aqui</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

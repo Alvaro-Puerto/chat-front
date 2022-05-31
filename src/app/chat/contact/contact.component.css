@@ -1,0 +1,12 @@
+.overflow {
+    overflow-y: scroll;
+}
+
+.contenedor {
+    max-height: 480px;
+}
+
+#lateral {
+    min-height: 480px;
+    height: 100%;
+}

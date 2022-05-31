@@ -1,0 +1,46 @@
+<div class="container-fluid bg-light p-4" style="height: 100%;">
+    <div class="row align-items-center m-4 h-100">
+        <div class="col-lg-4 col-sm-8 col-md-6 mx-auto m-4">
+            <div class="card shadow">
+                <div class="card-header bg-white">
+                    <p class="fw-bold text-center m-4">Login</p>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="loginForm" (ngSubmit)="sendLogin()" >
+                       
+                        <div class="form-group mt-2 mb-1">
+                            <label class="fw-bold" for="">Correo electronico <span class="text-danger">*</span></label>
+                            <input type="text" name="" formControlName="email" class="form-control rounded-0" id="">
+                            <span class="text-danger"
+                            *ngIf="(loginFormControl['email'].touched || submitted) && loginFormControl['email'].errors?.['required']">
+                                El correo es requerido
+                            </span>
+                            <span class="text-danger"
+                            *ngIf="(loginFormControl['email'].touched || submitted) && loginFormControl['email'].errors?.['email']">
+                                Por favor ingresar un correo valido
+                            </span>
+                        </div>
+                        <div class="form-group mt-1 mb-2">
+                            <label for="" class="fw-bold" >Contraseña <span class="text-danger">*</span></label>
+                            <input type="password" name="" class="form-control rounded-0" id="" formControlName="password">
+                            <span class="text-danger" *ngIf="(loginFormControl['password'].touched || submitted) && loginFormControl['password'].errors?.['required']">
+                                La contrasena es requerida
+                            </span>
+                            <span class="text-danger" *ngIf="(loginFormControl['password'].touched || submitted) && loginFormControl['password'].errors?.['invalidPassword']">
+                                La contrasena es invalida
+                            </span>
+                        </div>
+                       
+                        <div class="form-group d-flex justify-content-center p-4">
+                            <button type="submit" class="btn btn-success btn-block mt-1">Iniciar session</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="./register">Registrate aqui</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

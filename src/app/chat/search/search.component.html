@@ -1,0 +1,36 @@
+<div class="card border-0 h-100">
+    <div class="card-header bg-white">
+        <p class="fw-bold mt-2">Resultados de busquedas</p>
+    </div>
+    <div class="card-body bg-light overflow contenedor">
+        <div *ngFor="let item of listUser">
+            <div class="card shadow m-2" >
+                <div class="card-body " >
+                    <div class="row">
+                        <div class="col-3 border-end"></div>
+                        <div class="col-9">
+                            <p class="fw-bold">{{item.name}}</p>
+                            <small class="fw-bold">
+                                {{item.email}} 
+                            </small>
+                            <div class="w-100">
+                                <button *ngIf="!item.is_contact" class="btn btn-link" (click)="addContact(item.id)">
+                                    <span *ngIf="isLoading==item.id" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                    Agregar a contactos
+                                </button>
+                                <button *ngIf="item.is_contact" class="btn btn-link" (click)="removeContact(item.id)">
+                                    <span *ngIf="isLoading==item.id" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                    Eliminar de mis contactos
+                                </button>
+                                <button class="btn btn-link">
+                                   
+                                    Enviar mensaje
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

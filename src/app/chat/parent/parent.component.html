@@ -1,0 +1,24 @@
+<div class="container-fluid p-0">
+    <app-navbar></app-navbar>
+    <div class="row m-0 p-0">
+        <div class="col-3 m-0 p-0 bg-light" >
+            <div class="card border-0 border-end h-100">
+                <div class="card-header bg-white ">
+                    <p class="fw-bold mt-2">Conversaciones</p>
+                </div>
+                <div class="card-body" id="lateral">
+
+                </div>
+                <div class="card-footer">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-6 p-0 m-0 bg-light" >
+            <router-outlet></router-outlet>
+        </div>
+        <div class="col-3 bg-light m-0 p-0" >
+            <app-contact></app-contact>
+        </div>
+    </div>
+</div>

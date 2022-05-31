@@ -1,0 +1,7 @@
+.overflow {
+    overflow-y: scroll;
+}
+
+.contenedor {
+    max-height: 500px;
+}
