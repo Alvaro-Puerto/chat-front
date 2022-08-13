@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { Conversation } from '../interfaces/conversation';
 import { ConversationService } from '../services/conversation.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { ConversationService } from '../services/conversation.service';
 })
 export class RoomComponent implements OnInit {
   id: number;
+  conversation: Conversation
   constructor(
     private activateRoute: ActivatedRoute,
     private conversationService: ConversationService
@@ -21,9 +23,9 @@ export class RoomComponent implements OnInit {
 
   getConversation() {
     this.conversationService.getConversationWithUser(this.id)
-      .subscribe((data:any) => {
+      .subscribe(data => {
         console.log(data);
-        
+        this.conversation = data;
       }, err => {
         console.log(err);
         

@@ -6,4 +6,5 @@ export interface User {
     created_at?:        Date;
     updated_at?:        Date;
     is_contact?:        boolean;
+    active?:            boolean;
 }

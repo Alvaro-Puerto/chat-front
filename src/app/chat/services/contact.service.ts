@@ -26,10 +26,43 @@ export class ContactService extends BaseApiServiceService {
       (map((item) => {
         const index = this.listService.listContact.findIndex(res => res.id === item.id);
         this.listService.listContact.splice(index, 1)
+        
         return item;
       }))
     );
 
+  }
+
+  activateUser(users: User[]) {
+    users.forEach(key => {
+      const index = this.listService.listContact.findIndex(res => res.id === key.id);
+      
+      if (index >= 0) {
+        this.listService.listContact[index].active = true;
+        this.listService.listContact.sort((a, b) => Number(b.active) - Number(a.active))
+        
+      }
+      
+    })
+  }
+
+  leavingUser(user: User) {
+    
+      const index = this.listService.listContact.findIndex(res => res.id === user.id);
+      if (index >= 0) {
+        this.listService.listContact[index].active = false;
+        this.listService.listContact.sort((a, b) => Number(b.active) - Number(a.active))
+      }
+  }
+
+  joinUser(user: User) {
+    const index = this.listService.listContact.findIndex(res => res.id === user.id);
+    if (index >= 0) {
+      this.listService.listContact[index].active = true;
+      this.listService.listContact.sort((a, b) =>  Number(b.active) - Number(a.active))
+        
+    }
+    
   }
 }
 

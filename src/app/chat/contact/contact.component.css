@@ -10,3 +10,18 @@
     min-height: 480px;
     height: 100%;
 }
+
+.bouncingball {
+    width:10px;
+    height:10px;
+    border-radius:100%;
+    background:seagreen;
+    animation: bounce 1s;
+    transform: translateY(0px);
+    animation-iteration-count: infinite;
+    position:absolute;
+    display: flex;
+    margin: auto;
+    padding: auto;
+    margin-top: 5px;
+  }

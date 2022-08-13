@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../interfaces/user';
 import { ContactService } from '../services/contact.service';
 import { ListServicesService } from '../services/list-services.service';
+//import Echo from 'laravel-echo';
 
 @Component({
   selector: 'app-contact',
@@ -26,8 +27,7 @@ export class ContactComponent implements OnInit {
 
   getContact() {
     this.contactService.getContact()
-      .subscribe((data: any) => {
-        
+      .subscribe((data) => {
           this.listService.listContact = data;
       }, (err: HttpErrorResponse) => {
         console.log(err);
