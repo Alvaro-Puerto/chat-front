@@ -2,3 +2,53 @@
     min-height: 480px;
     height: 100%;
 }
+
+.message__outer {
+    display: flex;
+}
+
+.message__inner {
+    display: flex;
+    flex: 1;
+    flex-direction: row-reverse;
+}
+
+.message__actions {
+    width: 67px;
+    padding-right: 5px;
+}
+
+.message__spacer {
+    flex: 1;
+}
+
+.message__bubble {
+    max-width: calc(100% - 67px);
+    overflow-wrap: break-word;
+}
+
+.message__actions {
+    flex-shrink: 0;
+}
+
+.message__status {
+    width: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.message_avatar {
+    padding-left: 6px;
+    padding-right: 8px;   
+}
+
+.message__actions {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ width: 67px;
+ padding-right: 5px;   
+}

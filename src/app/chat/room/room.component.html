@@ -3,12 +3,20 @@
         <p class="fw-bold mt-2">{{conversation?.name}}</p>
     </div>
     <div class="card-body bg-light" id="lateral">
-
+      <div class="message-group-receive">
+          <div>
+             <ul>
+                 <li *ngFor="let item of conversation?.message">
+                    <span>{{item.pivot.content}}</span>
+                 </li>
+             </ul>
+          </div>
+      </div>
     </div>
     <div class="card-footer bg-white">
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button class="btn btn-primary" type="button" id="button-addon2">Enviar</button>
+            <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="" [formControl]="inputMessage">
+            <button class="btn btn-primary" type="button" [disabled]="!inputMessage.value" id="" (click)="sendMessage()">Enviar</button>
         </div>          
     </div>
 </div>

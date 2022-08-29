@@ -1,0 +1,25 @@
+<div class="card  rounded-0 m-0">
+    <div class="card-header bg-white">
+        <p class="fw-bold mt-2">
+            Conversaciones
+        </p>
+    </div>
+    <div class="card-body p-0 overflow contenedor" id="lateral">
+        <ul class="list-group">
+            <a [routerLink]="['/room/', item.id]" routerLinkActive="router-link-active"  class="list-group-item m-0 border-0" *ngFor="let item of listConversation | searchFilter: query ">
+                <div class="row m-0">
+        
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                        <small class="d-flex fw-lighter">{{item.name}} </small>
+                    </div>
+                </div>
+            </a>
+           
+        </ul>
+    </div>
+    <div class="card-footer">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Buscar contacto" aria-label="Recipient's username" aria-describedby="button-addon2" [(ngModel)]="query">
+        </div>
+    </div>
+</div>

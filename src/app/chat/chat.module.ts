@@ -14,6 +14,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchFilterPipe } from '../pipe/search-filter.pipe';
+import { ConversationComponent } from './conversation/conversation.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { SearchFilterPipe } from '../pipe/search-filter.pipe';
     NavbarComponent,
     SearchComponent,
     ContactComponent,
-    SearchFilterPipe
+    SearchFilterPipe,
+    ConversationComponent
   ],
   imports: [
     ToastrModule.forRoot({

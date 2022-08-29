@@ -25,8 +25,11 @@ export class SearchComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.activateRoute.params.subscribe((params: Params) => this.name = params['params']);
-    this.searchUser();
+    this.activateRoute.params.subscribe((params: Params) => {
+          this.name = params['params'];
+          this.searchUser();
+    });
+    
   }
 
   searchUser() {
